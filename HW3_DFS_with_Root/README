@@ -1,0 +1,15 @@
+-----------------------------------------------------
+TO BEGIN EXECUTION
+-----------------------------------------------------
+-To start the execution, run the Main.java file.
+
+-----------------------------------------------------
+FLOW OF EXECUTION
+-----------------------------------------------------
+-The Main class constructor calls the init() method which is used to initialize the Processors.
+-Currently, only 5 processors are initialized. Following that, we add the list of neighbors of all the 
+nodes as a value for the HashMap called 'graph' where the key is the node itself.  
+-Post that, we call sendInitialMsg() to begin the execution of the actual algorithm by sending an initial
+message M to one of the nodes in the graph.
+-When the entire algorithm has run its course, we call the displaySpanningTree() method to display the 
+spanning tree constructed as a result of our DFS algorithm

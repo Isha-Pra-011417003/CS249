@@ -1,0 +1,12 @@
+-----------------------------------------------------
+TO BEGIN EXECUTION
+-----------------------------------------------------
+-To start the execution, run the Convergecast.java file.
+
+-----------------------------------------------------
+FLOW OF EXECUTION
+-----------------------------------------------------
+-The Convergecast constructor calls the init() method which is used to initialize the tree.
+-Post that, we call maxElem(tree.root) to get the maximum value of the node in the tree rooted at 'root'
+-Then we call the printChildren() to print all the children of root that are directly accessible from the 
+root. Here, we have used the post-order tree traversal.
