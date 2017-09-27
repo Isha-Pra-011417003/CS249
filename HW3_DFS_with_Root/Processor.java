@@ -4,8 +4,6 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-//import Message;
-
 /**
  * Created by tphadke on 8/29/17.
  */
@@ -38,17 +36,22 @@ public class Processor implements Observer {
       this.parent=parent;
     }
 
-    //This method will add a message to this processors buffer.
-    //Other processors will invoke this method to send a message to this Processor
+    
+    /**
+     * Sends the message to the buffer of the invoking processor/node
+     * @param message The message that you want to send to the buffer (M, ALREADY, PARENT)
+     */
     public void sendMessgeToMyBuffer(Message message){
+    //This method will add a message to this processors buffer.
+     //Other processors will invoke this method to send a message to this Processor
     		System.out.println("Processor "+ messageBuffer.getSender().id+ " is sending msg " + message + " to Processor" + this.id);
     		messageBuffer.setMessage(message);
     }
 
-
-    //This is analogous to recieve method.Whenever a message is dropped in its buffer this Pocesssor will respond
-     public void update(Observable observable, Object arg) {
-      Processor source=(Processor)arg;
+      public void update(Observable observable, Object arg) {
+     //This is analogous to recieve method.Whenever a message is dropped in its buffer this Pocesssor will respond
+      
+       Processor source=(Processor)arg;
       Message msg = messageBuffer.getMessage();
       
       switch(msg) {
@@ -65,9 +68,12 @@ public class Processor implements Observer {
           explore();
         }
         else {
-          source.messageBuffer.setSender(this);
-          source.sendMessgeToMyBuffer(Message.ALREADY);
-          this.removeFromUnexplored(source);
+          if(source!=this) {
+            source.messageBuffer.setSender(this);
+            source.sendMessgeToMyBuffer(Message.ALREADY);
+            this.removeFromUnexplored(source);
+          }
+          
         }
         break;
         
@@ -84,7 +90,11 @@ public class Processor implements Observer {
 
     }
 
-    private void explore(){
+     /**
+      * Explores the unexplored neighbors of the node that invokes this method
+      * 
+      */
+     private void explore(){
       System.out.println("-----------------------------------------------");
     		if (unexplored.size() > 0) {
     			currentExploredProcessor = unexplored.get(unexplored.size()-1);

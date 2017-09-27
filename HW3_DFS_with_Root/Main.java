@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-//import Message;
-
 /**
  * Created by tphadke on 8/29/17.
  */
@@ -19,10 +17,8 @@ public class Main {
    	 Processor p5;
    	
     public  Main() {
-
-        init();
-
-    }
+       init();
+   }
     
     public static void main (String args[]) {
       Main m = new Main();
@@ -30,8 +26,11 @@ public class Main {
       m.displaySpanningTree();
     }
 
+    /**
+     * Initializes the graph
+     */
     public void init(){
-        //TODO: Populate the Graph with processors 0,1,2,3...
+        //Populating the Graph with processors 0,1,2,3...
     		this.p0 = new Processor(0);
     		this.p1 = new Processor(1);
     		this.p2 = new Processor(2);
@@ -39,6 +38,7 @@ public class Main {
     		this.p4 = new Processor(4);
     		this.p5 = new Processor(5);
 
+    		//Adding neighbors (as an unexplored list) for each node
     		p0.unexplored.addAll(Arrays.asList(p1,p2,p3));
         p1.unexplored.addAll(Arrays.asList(p0,p2,p4));
         p2.unexplored.addAll(Arrays.asList(p0,p1,p5));
@@ -55,12 +55,18 @@ public class Main {
         graph.put(p5, p5.unexplored);
     }
     
+    /**
+     * Sends the initial message M to one of the nodes (P0 in this case) to begin execution.
+     */
     public void sendInitialMsg () {
       this.p0.setParent(this.p0);
       this.p0.messageBuffer.setSender(this.p0);
       this.p0.sendMessgeToMyBuffer(Message.M);
     }
     
+    /**
+     * Used to print the final spanning tree formed by DFS
+     */
     public void displaySpanningTree() {
       System.out.println("The spanning tree thus formed is:");
       for (Processor processor : this.graph.keySet())

@@ -18,7 +18,9 @@ public class Convergecast {
     tree.printChildren();
   }
   
-  
+  /**
+   * Initializes the tree
+   */
   public void init () {
     this.root= new Node(2);
     this.root.left = new Node(7);
@@ -31,6 +33,11 @@ public class Convergecast {
     this.root.right.right.left = new Node(4);
   }
   
+  /**
+   * Returns the maximum elements(or node) of the tree starting from the Node 'node'
+   * @param node The node at which, the execution to find maximum from its children, begins
+   * @return value of the max node amongst all the children of 'node'
+   */
   private int maxElem(Node node) {
     int max = node.value;
     if(node.left != null) {
@@ -42,7 +49,9 @@ public class Convergecast {
     return max;
 }
 
-  
+  /**
+   * Print all the children accessible from the root node
+   */
   public void printChildren() {
     System.out.println("The values of all children of the root are:");
     this.getAllNodeValues(this.root);
@@ -52,6 +61,10 @@ public class Convergecast {
     }
   }
   
+  /**
+   * Post-order tree traversal to get the list of children for the root node specified
+   * @param root
+   */
   public void getAllNodeValues(Node root) {
     if(root==null)
       return;
