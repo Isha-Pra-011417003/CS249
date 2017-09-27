@@ -65,7 +65,7 @@ public class Processor implements Observer {
           explore();
         }
         else {
-          source.messageBuffer.setSender(source);
+          source.messageBuffer.setSender(this);
           source.sendMessgeToMyBuffer(Message.ALREADY);
           this.removeFromUnexplored(source);
         }
