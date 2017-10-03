@@ -1,21 +1,19 @@
 package HW4_Convergecast;
-import java.util.ArrayList;
-import java.util.ListIterator;
 
 public class Convergecast {
   Node root;
-  ArrayList<Integer> childValues;
   
   Convergecast() {
     root=null;
-    childValues= new ArrayList<Integer>();
     init();
   }
 
   public static void main(String args[]) {
     Convergecast tree = new Convergecast();
     System.out.println("The maximum value of a node in the tree is: "+ tree.maxElem(tree.root));
-    tree.printChildren();
+    
+    System.out.println("The values of all children of the root are:");
+    tree.printChildren(tree.root);
   }
   
   /**
@@ -49,28 +47,17 @@ public class Convergecast {
     return max;
 }
 
-  /**
-   * Print all the children accessible from the root node
-   */
-  public void printChildren() {
-    System.out.println("The values of all children of the root are:");
-    this.getAllNodeValues(this.root);
-    ListIterator<Integer> it=this.childValues.listIterator();
-    while(it.hasNext()) {
-      System.out.print(it.next() + ", ");
-    }
-  }
-  
+    
   /**
    * Post-order tree traversal to get the list of children for the root node specified
    * @param root
    */
-  public void getAllNodeValues(Node root) {
+  public void printChildren(Node root) {
     if(root==null)
       return;
-    getAllNodeValues(root.left);
-    getAllNodeValues(root.right);
-    childValues.add(root.value);
+    printChildren(root.left);
+    printChildren(root.right);
+    System.out.print(root.value + " ");
     
   }
 

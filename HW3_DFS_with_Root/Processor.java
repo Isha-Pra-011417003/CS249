@@ -51,41 +51,41 @@ public class Processor implements Observer {
       public void update(Observable observable, Object arg) {
      //This is analogous to recieve method.Whenever a message is dropped in its buffer this Pocesssor will respond
       
-       Processor source=(Processor)arg;
-      Message msg = messageBuffer.getMessage();
+        Processor source = messageBuffer.getSender();
+        Message msg = messageBuffer.getMessage();
       
-      switch(msg) {
-      
-      case M:
-        if(this==this.parent) {
-          System.out.println("Parent is same as child. So this is root.");
-          explore();
-        }
-        if (this.parent==null) {
-          this.setParent(source);
-          this.removeFromUnexplored(source);
-          System.out.println("Child is: " + this.id+ " And Parent is: " + source.id);
-          explore();
-        }
-        else {
-          if(source!=this) {
-            source.messageBuffer.setSender(this);
-            source.sendMessgeToMyBuffer(Message.ALREADY);
-            this.removeFromUnexplored(source);
+        switch(msg) {
+        
+        case M:
+          if(this==this.parent) {
+            System.out.println("Parent is same as child. So this is root.");
+            explore();
           }
+          if (this.parent==null) {
+            this.setParent(source);
+            this.removeFromUnexplored(source);
+            System.out.println("Child is: " + this.id+ " And Parent is: " + source.id);
+            explore();
+          }
+          else {
+            if(source!=this) {
+              source.messageBuffer.setSender(this);
+              source.sendMessgeToMyBuffer(Message.ALREADY);
+              this.removeFromUnexplored(source);
+            }
+            
+          }
+          break;
           
+        case PARENT:
+          this.children.add(source);
+          explore();
+          break;
+          
+        case ALREADY:
+          explore();
+          break;
         }
-        break;
-        
-      case PARENT:
-        this.children.add(source);
-        explore();
-        break;
-        
-      case ALREADY:
-        explore();
-        break;
-      }
       
 
     }

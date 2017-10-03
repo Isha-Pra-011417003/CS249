@@ -45,7 +45,7 @@ public class Buffer extends Observable {
     public void setMessage(Message message) {
       this.message = message;
       setChanged();
-      notifyObservers(senderProcess); // This calls the update() in Processor.java
+      notifyObservers(); // This calls the update() in Processor.java
   }
 }
 
