@@ -1,4 +1,4 @@
-package hw5_Vectorclocks;
+package HW5_VectorClocks;
 
 import java.util.List;
 
