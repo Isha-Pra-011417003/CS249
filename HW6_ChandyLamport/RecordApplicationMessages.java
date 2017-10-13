@@ -16,25 +16,8 @@ public class RecordApplicationMessages extends Thread {
     lastIndexMap = new HashMap <Buffer, Integer> ();
   }
   
+
   
-  @Override
-  public void run() {
-    int lastIdx = channel.getTotalMessageCount() - 1;
-    List<Message> recordedMessagesSinceMarker = new ArrayList<>();
-    while(lastIdx >= 0) {
-      Message message = channel.getMessage(lastIdx);
-      if(MessageType.MARKER.equals(message.getMessageType()))
-        break;
-      recordedMessagesSinceMarker.add(message);
-      lastIdx--;
-    }
-    p.channelState.put(channel, recordedMessagesSinceMarker);
-  }
-    
-    
-    
- 
-  /*
   public void run() {
     
     int lastIdx=-1;
@@ -54,7 +37,6 @@ public class RecordApplicationMessages extends Thread {
     List<Message> recordedMessagesSinceMarker = new ArrayList<>();
     
     try {
-      synchronized(this) {
       while (p.channelMarkerCount.get(p)==1) {
         
         System.out.println("@@@@@@ I started recording on channel " + channel.getLabel() + " after index: " + lastIdx);
@@ -62,7 +44,7 @@ public class RecordApplicationMessages extends Thread {
         if(channel.getMessage(lastIdx)!=null)
           recordedMessagesSinceMarker.add(channel.getMessage(lastIdx));
        
-      }
+     
       System.out.println();
       System.out.println("The channelmarkercount is no more just 1. Its more!");
       p.channelState.put(channel, recordedMessagesSinceMarker);
@@ -101,5 +83,5 @@ public class RecordApplicationMessages extends Thread {
  
 
   }
-*/
+
 }
