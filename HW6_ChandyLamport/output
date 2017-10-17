@@ -1,11 +1,6 @@
-Sched run method
-Sched run method
-Starting Thread 1
-Sched run method
 Starting Thread 2
 Starting Thread 3
-
-
+Starting Thread 1
 Initiating snapshot from P1
 
 P1: Recording my registers... 
@@ -13,34 +8,54 @@ P1: Recording my program counters...
 P1: Recording my local variables...
 
 Sending Marker from P1 to P13
-Checking if P3 has received MARKER for the first time
+Processing Algorithm message on processor1
+Processing Algorithm message on processor1
+Processing Algorithm message on processor3
+Processing Algorithm message on processor2
+Processing Algorithm message on processor3
+Processing Algorithm message on processor1
+Processing Algorithm message on processor2
+Processing Algorithm message on processor2
+Processing Algorithm message on processor1
+Processing Algorithm message on processor1
 
 P3: Recording my registers... 
 P3: Recording my program counters...
 P3: Recording my local variables...
 
 
-Recored channel P13 as empty
+Recorded channel P13 as empty
 Sending Marker from P3 to P31
-Sending Marker from P3 to P32
-Checking if P1 has received MARKER for the first time
+*********Duplicate marker received on channel P13************
+Interrupting thread P13
+Processing Algorithm message on processor3
+Processing Algorithm message on processor3
+Processing Algorithm message on processor2
 Duplicate MARKER. Stop recording on all incoming channels of Processor P1
-Checking if P2 has received MARKER for the first time
+Sending Marker from P3 to P32
+Processing Algorithm message on processor1
+Processing Algorithm message on processor1
 
 P2: Recording my registers... 
 P2: Recording my program counters...
 P2: Recording my local variables...
 
 
-Recored channel P32 as empty
+Recorded channel P32 as empty
 Sending Marker from P2 to P21
-Sending Marker from P2 to P23
-Checking if P1 has received MARKER for the first time
+Processing Algorithm message on processor2
+Processing Algorithm message on processor2
 Duplicate MARKER. Stop recording on all incoming channels of Processor P1
-Checking if P3 has received MARKER for the first time
+Sending Marker from P2 to P23
+Processing Algorithm message on processor3
 Duplicate MARKER. Stop recording on all incoming channels of Processor P3
 
 
+Processing Algorithm message on processor3
 Sending Marker from P1 to P12
-Checking if P2 has received MARKER for the first time
+Processing Algorithm message on processor1
+Processing Algorithm message on processor2
+Processing Algorithm message on processor3
+Processing Algorithm message on processor3
 Duplicate MARKER. Stop recording on all incoming channels of Processor P2
+Processing Algorithm message on processor2
