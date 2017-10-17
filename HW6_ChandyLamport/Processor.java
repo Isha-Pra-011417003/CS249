@@ -204,7 +204,7 @@ public class Processor implements Observer {
 
 		} else {
 			if (message.getMessageType().equals(MessageType.ALGORITHM)) {
-//					System.out.println("Processing Algorithm message on processor"+this.id);
+					System.out.println("Processing Algorithm message on processor"+this.id);
 			} // There is no other type
 		}
 
