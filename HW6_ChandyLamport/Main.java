@@ -1,12 +1,9 @@
 package HW6_ChandyLamport;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-/**
- * Created by tphadke on 9/27/17.
- */
+
 public class Main {
 
 	public static void main(String args[]) {
@@ -61,6 +58,13 @@ public class Main {
 		algo2.start();
 		algo3.start();
 
+		try {
+      Thread.sleep(5000);
+    } catch (InterruptedException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+		
 		System.out.println("Initiating snapshot from P1");
 		processor1.initiateSnapShot();
 

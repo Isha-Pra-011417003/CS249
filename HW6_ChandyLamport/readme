@@ -22,6 +22,6 @@ Code structure:
 		
 - Buffer.java: A class which has the incoming messages for each channel.
 
-- Message.java: Gives the message type and from which processor it was sent or received.
+- Message.java: Gives the message type (MARKER, HELLO, BONJOUR or CIAO) and from which processor it was sent or received.
 
 - Algorithm.java: A class where execution plan for each processor is defined.
