@@ -1,0 +1,193 @@
+***********************************************
+STRUCTURE OF THE RING:
+***********************************************
+Processor: 10
+Right: 20
+Left:35
+
+Processor: 20
+Right: 50
+Left:10
+
+Processor: 50
+Right: 30
+Left:20
+
+Processor: 30
+Right: 60
+Left:50
+
+Processor: 60
+Right: 25
+Left:30
+
+Processor: 25
+Right: 35
+Left:60
+
+Processor: 35
+Right: 10
+Left:25
+
+
+INITIATING WITH PROCESSOR P WITH ID: 30 FOR THE FIRST TIME 
+INITIATING WITH PROCESSOR P WITH ID: 10 FOR THE FIRST TIME 
+INITIATING WITH PROCESSOR P WITH ID: 35 FOR THE FIRST TIME 
+INITIATING WITH PROCESSOR P WITH ID: 50 FOR THE FIRST TIME 
+INITIATING WITH PROCESSOR P WITH ID: 25 FOR THE FIRST TIME 
+INITIATING WITH PROCESSOR P WITH ID: 60 FOR THE FIRST TIME 
+INITIATING WITH PROCESSOR P WITH ID: 20 FOR THE FIRST TIME 
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Sending message PROBE both sides from Processor 25
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Sending message PROBE both sides from Processor 20
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Sending message PROBE both sides from Processor 30
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Sending message PROBE both sides from Processor 60
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Sending message PROBE both sides from Processor 10
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Sending message PROBE both sides from Processor 35
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Sending message PROBE both sides from Processor 50
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Processor :50 Swallowing ID: 30
+Processor :60 Swallowing ID: 25
+Processor :35 Swallowing ID: 10
+Processor :60 Swallowing ID: 30
+Processor :20 Swallowing ID: 10
+
+Processor :35 Swallowing ID: 25
+
+
+Hop Count reached. Sending a REPLY from 25 to 35
+From Processor 25 : PROBE came from right. Need to send REPLY to the right
+Hop Count reached. Sending a REPLY from 30 to 60
+From Processor 30 : PROBE came from right. Need to send REPLY to the right
+Hop Count reached. Sending a REPLY from 10 to 20
+From Processor 10 : PROBE came from right. Need to send REPLY to the right
+
+
+
+
+
+Processor :50 Swallowing ID: 20
+Hop Count reached. Sending a REPLY from 10 to 35From Processor 10 : PROBE came from left. Need to send REPLY to the left
+Hop Count reached. Sending a REPLY from 25 to 60From Processor 25 : PROBE came from left. Need to send REPLY to the left
+
+Hop Count reached. Sending a REPLY from 20 to 50
+From Processor 20 : PROBE came from right. Need to send REPLY to the right
+
+
+----------------------------------------------------------------------------
+[ WINNER of phase 0: Processor with ID: 60]
+Hence, initiating next phase from : Processor 60
+----------------------------------------------------------------------------
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Sending message PROBE both sides from Processor 60
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+----------------------------------------------------------------------------
+[ WINNER of phase 0: Processor with ID: 35]
+Hence, initiating next phase from : Processor 35
+----------------------------------------------------------------------------
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Sending message PROBE both sides from Processor 35
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+Hop Count reached. Sending a REPLY from 30 to 50From Processor 30 : PROBE came from left. Need to send REPLY to the left
+Forwarding the message from Processor 25 as the ID in the message :35 is greater than my own 
+
+----------------------------------------------------------------------------
+[ WINNER of phase 0: Processor with ID: 50]
+Hence, initiating next phase from : Processor 50
+----------------------------------------------------------------------------
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Sending message PROBE both sides from Processor 50
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Forwarding the message from Processor 30 as the ID in the message :60 is greater than my own 
+Processor :60 Swallowing ID: 35
+Forwarding the message from Processor 20 as the ID in the message :50 is greater than my own 
+Forwarding the message from Processor 10 as the ID in the message :35 is greater than my own 
+
+Hop Count reached. Sending a REPLY from 20 to 10From Processor 20 : PROBE came from left. Need to send REPLY to the left
+
+
+
+Hop Count reached. Sending a REPLY from 10 to 20
+From Processor 10 : PROBE came from right. Need to send REPLY to the right
+
+
+Forwarding the message from Processor 30 as the ID in the message :50 is greater than my own 
+Processor :60 Swallowing ID: 50
+
+Hop Count reached. Sending a REPLY from 50 to 30
+From Processor 50 : PROBE came from right. Need to send REPLY to the right
+
+
+Forwarding the message from Processor 25 as the ID in the message :60 is greater than my own 
+
+Hop Count reached. Sending a REPLY from 35 to 25From Processor 35 : PROBE came from left. Need to send REPLY to the left
+
+
+----------------------------------------------------------------------------
+[ WINNER of phase 1: Processor with ID: 60]
+Hence, initiating next phase from : Processor 60
+----------------------------------------------------------------------------
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Sending message PROBE both sides from Processor 60
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Forwarding the message from Processor 30 as the ID in the message :60 is greater than my own 
+Forwarding the message from Processor 50 as the ID in the message :60 is greater than my own 
+Forwarding the message from Processor 20 as the ID in the message :60 is greater than my own 
+
+Hop Count reached. Sending a REPLY from 10 to 20
+From Processor 10 : PROBE came from right. Need to send REPLY to the right
+
+
+
+
+Forwarding the message from Processor 25 as the ID in the message :60 is greater than my own 
+Forwarding the message from Processor 35 as the ID in the message :60 is greater than my own 
+Forwarding the message from Processor 10 as the ID in the message :60 is greater than my own 
+
+Hop Count reached. Sending a REPLY from 20 to 10From Processor 20 : PROBE came from left. Need to send REPLY to the left
+
+
+
+
+----------------------------------------------------------------------------
+[ WINNER of phase 2: Processor with ID: 60]
+Hence, initiating next phase from : Processor 60
+----------------------------------------------------------------------------
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Sending message PROBE both sides from Processor 60
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Forwarding the message from Processor 30 as the ID in the message :60 is greater than my own 
+Forwarding the message from Processor 50 as the ID in the message :60 is greater than my own 
+Forwarding the message from Processor 20 as the ID in the message :60 is greater than my own 
+Forwarding the message from Processor 10 as the ID in the message :60 is greater than my own 
+Forwarding the message from Processor 35 as the ID in the message :60 is greater than my own 
+Forwarding the message from Processor 25 as the ID in the message :60 is greater than my own 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ALGORITHM ENDED with ID:60  !!!! in Phase 3 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Forwarding the message from Processor 25 as the ID in the message :60 is greater than my own 
+Forwarding the message from Processor 35 as the ID in the message :60 is greater than my own 
+Forwarding the message from Processor 10 as the ID in the message :60 is greater than my own 
+Forwarding the message from Processor 20 as the ID in the message :60 is greater than my own 
+Forwarding the message from Processor 50 as the ID in the message :60 is greater than my own 
+Forwarding the message from Processor 30 as the ID in the message :60 is greater than my own 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ALGORITHM ENDED with ID:60  !!!! in Phase 3 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+EXECUTOR SHUTDOWN. ALGORITHM ENDED SUCCESSFULLY
+==================================================

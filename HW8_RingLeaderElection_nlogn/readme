@@ -1,0 +1,33 @@
+============================================
+The Asynchronous Ring Leader Algorithm   
+============================================
+
+=======================
+EXECUTION
+========================
+Main.java:
+
+
+- We call the init() method
+- Then an ExecutorService is defined to create 7 separate threads- one for each Processor 
+- This service is used to initiate the message passing from each Processor, for the first time by calling sendBoth() method of Processor class
+
+init():
+- In this method we initialize 7 processors with distinct IDs
+- A CountdownLatch object is passed to the Processor constructor. This is used to ensure that all Threads start simultaneously
+- Then we add these processors to a List 'listOfProcessors'.
+- Running a for loop and using proper logic, we define the left and right processors for each processor, thus creating a ring structure
+____________________________________________________________________________________________________________________________________________
+
+Processor.java:
+
+- We define 3 separate methods depending on whether we want to send the message to either Both sides or Left side or Right side.
+- In each of above methods, we send the message to the buffer or either the left or right processors or both
+- This class is an Observer and observes the Buffer (Observable)
+- In the update() method, we take the desired action depending upon the type of message : PROBE or REPLY
+- The algorithm terminates when a processor receives its own PROBE message back.This can happen only if 2^k > no. of Processors, where k = phase no.
+- We terminate the Algorithm by calling executor.shutdown() to stop the ExecutorService instance.
+- Winner of each Phase is determined by the condition that the Processor should receive REPLY message back from both its neighbors.
+-  Only the winner of each phase can initiate sending the PROBE and advance to the next phase to compete for winner in the next round.
+
+
